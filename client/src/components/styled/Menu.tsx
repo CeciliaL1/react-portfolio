@@ -35,9 +35,9 @@ export const NavMenu = styled.nav<IMenyProps>`
             background-color: #0d2538;
             position: fixed;
             top: 0;
-            right: 0;
+            right: 0px;
             height: 100vh;
-            width: 250px;
+            width: 300px;
             padding: 0;
           }
           li:nth-child(1) {
@@ -59,7 +59,7 @@ export const HamburgerMenu = styled.div<IMenyProps>`
     height: 2rem;
     position: fixed;
     top: 30px;
-    right: 25px;
+    right: 100px;
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;

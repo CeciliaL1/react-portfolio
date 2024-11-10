@@ -17,10 +17,37 @@ export const Layout = () => {
   return (
     <>
       <HeaderWrapper>
-        <motion.h1>Cecilia Lepik</motion.h1>
+        <motion.h1
+          initial={{
+            opacity: 0,
+            // if odd index card,slide from right instead of left
+            x: -50,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0, // Slide in to its original position
+            transition: {
+              duration: 1, // Animation duration
+            },
+          }}
+          viewport={{ once: true }}
+        >
+          Cecilia Lepik
+        </motion.h1>
         <NavMenu open={open}>
           <ul>
             <motion.li
+              initial={{
+                opacity: 0,
+              }}
+              whileInView={{
+                opacity: 1,
+
+                transition: {
+                  duration: 1, // Animation duration
+                },
+              }}
+              viewport={{ once: true }}
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.8 }}
               style={{ x: 100 }}
@@ -28,6 +55,16 @@ export const Layout = () => {
               <NavLink to={"/"}>Home</NavLink>
             </motion.li>
             <motion.li
+              initial={{
+                opacity: 0,
+              }}
+              whileInView={{
+                opacity: 1,
+
+                transition: {
+                  duration: 1, // Animation duration
+                },
+              }}
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.8 }}
               style={{ x: 100 }}
@@ -35,6 +72,16 @@ export const Layout = () => {
               <NavLink to={"/CurriculumVitae"}>CV</NavLink>
             </motion.li>
             <motion.li
+              initial={{
+                opacity: 0,
+              }}
+              whileInView={{
+                opacity: 1,
+
+                transition: {
+                  duration: 1, // Animation duration
+                },
+              }}
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.8 }}
               style={{ x: 100 }}
@@ -43,12 +90,25 @@ export const Layout = () => {
             </motion.li>
           </ul>
         </NavMenu>
+        <motion.div
+          initial={{
+            opacity: 0,
+          }}
+          whileInView={{
+            opacity: 1,
+
+            transition: {
+              duration: 1, // Animation duration
+            },
+          }}
+        >
+          <HamburgerMenu open={open} onClick={handleClick}>
+            <div></div>
+            <div></div>
+            <div></div>
+          </HamburgerMenu>
+        </motion.div>
       </HeaderWrapper>
-      <HamburgerMenu open={open} onClick={handleClick}>
-        <div></div>
-        <div></div>
-        <div></div>
-      </HamburgerMenu>
 
       <MainWrapper>
         <Outlet></Outlet>
@@ -63,10 +123,23 @@ export const Layout = () => {
         </div>
         <div>
           <a href="https://github.com/CeciliaL1" target="_blank">
-            <i className="fa-brands fa-github"></i>
+            <motion.i
+              className="fa-brands fa-github"
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.8 }}
+              style={{ x: 100 }}
+            ></motion.i>
           </a>
-          <a href="www.linkedin.com/in/cecilia-lepik-70360b213" target="_blank">
-            <i className="fa-brands fa-linkedin"></i>
+          <a
+            href="https://www.linkedin.com/in/cecilia-lepik-70360b213"
+            target="_blank"
+          >
+            <motion.i
+              className="fa-brands fa-linkedin"
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.8 }}
+              style={{ x: 100 }}
+            ></motion.i>
           </a>
         </div>
       </FooterWrapper>

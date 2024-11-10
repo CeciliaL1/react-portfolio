@@ -12,14 +12,16 @@ function App() {
 
   useEffect(() => {
     const getProjects = async () => {
-      const projects = await get<IProject[]>("http://localhost:3000");
+      const projects = await get<IProject[]>("http://localhost:3000/portfolio");
       setProjects(projects);
       setIsFetched(true);
     };
-    if (isFetched) {
+
+    if (!isFetched) {
       getProjects();
     }
   });
+  console.log(isFetched);
 
   return (
     <>
