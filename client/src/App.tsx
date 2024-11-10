@@ -1,19 +1,31 @@
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
 import { IProject } from "./models/IProject";
 import { get } from "./services/serviceBase";
-
-const getProjects = async () => {
-  const projects = await get<IProject>("http://localhost:3000");
-  return projects;
-};
-
-const data = await getProjects();
-console.log(data);
+import { router } from "./Router";
+import { PortfolioContext } from "./contexts/PortfolioContext";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [projects, setProjects] = useState<IProject[]>([]);
+  const [isFetched, setIsFetched] = useState(false);
+
+  useEffect(() => {
+    const getProjects = async () => {
+      const projects = await get<IProject[]>("http://localhost:3000");
+      setProjects(projects);
+      setIsFetched(true);
+    };
+    if (isFetched) {
+      getProjects();
+    }
+  });
+
   return (
     <>
-      <h1>Cecilia Portfolio</h1>
+      <PortfolioContext.Provider value={{ projects: projects }}>
+        <RouterProvider router={router}></RouterProvider>
+      </PortfolioContext.Provider>
     </>
   );
 }
