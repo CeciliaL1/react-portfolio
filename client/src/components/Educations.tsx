@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { IEducation } from "../models/IEducations";
 
 import { get } from "../services/serviceBase";
+import { Education } from "./Education";
 
 export const Educations = () => {
   const [educations, setEducations] = useState<IEducation[]>([]);
@@ -23,5 +24,14 @@ export const Educations = () => {
 
   console.log("educations", educations);
 
-  return <></>;
+  return (
+    <>
+      <div className="content-margin">
+        <h3>Education</h3>
+        {educations.map((education) => (
+          <Education education={education} key={education.title}></Education>
+        ))}
+      </div>
+    </>
+  );
 };

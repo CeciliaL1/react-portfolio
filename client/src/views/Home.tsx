@@ -1,11 +1,12 @@
 import { LongFacts } from "../components/LongFacts";
 import { ShortFacts } from "../components/ShortFacts";
-import { RowWrapper } from "../components/styled/Wrappers";
+import { ColumnWrapper, ContentWrapper } from "../components/styled/Wrappers";
+import { TechnicalCompetencies } from "../components/TechnicalCompetencies";
 
 export const Home = () => {
   return (
     <>
-      <RowWrapper>
+      <ContentWrapper>
         <div>
           <img
             src="public/cecilia.jpg"
@@ -19,7 +20,13 @@ export const Home = () => {
           <ShortFacts></ShortFacts>
           <LongFacts></LongFacts>
         </div>
-      </RowWrapper>
+      </ContentWrapper>
+
+      <ContentWrapper>
+        <ColumnWrapper>
+          <TechnicalCompetencies></TechnicalCompetencies>
+        </ColumnWrapper>
+      </ContentWrapper>
     </>
   );
 };

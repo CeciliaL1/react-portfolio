@@ -13,6 +13,7 @@ export const NavMenu = styled.nav<IMenyProps>`
   }
   li {
     margin: 10px;
+    font-size: 1.2rem;
   }
   a {
     text-decoration: none;
@@ -45,6 +46,7 @@ export const NavMenu = styled.nav<IMenyProps>`
           }
           li {
             margin-top: 30px;
+            font-size: 1.2rem;
           }
           a {
             color: white;

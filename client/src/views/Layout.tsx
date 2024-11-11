@@ -44,10 +44,9 @@ export const Layout = () => {
                 opacity: 1,
 
                 transition: {
-                  duration: 1, // Animation duration
+                  duration: 1,
                 },
               }}
-              viewport={{ once: true }}
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.8 }}
               style={{ x: 100 }}
@@ -62,7 +61,7 @@ export const Layout = () => {
                 opacity: 1,
 
                 transition: {
-                  duration: 1, // Animation duration
+                  duration: 1,
                 },
               }}
               whileHover={{ scale: 1.2 }}
@@ -79,7 +78,7 @@ export const Layout = () => {
                 opacity: 1,
 
                 transition: {
-                  duration: 1, // Animation duration
+                  duration: 1,
                 },
               }}
               whileHover={{ scale: 1.2 }}

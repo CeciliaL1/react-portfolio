@@ -1,11 +1,14 @@
+import { Ul } from "./styled/TextContent";
 import { ColumnWrapper } from "./styled/Wrappers";
 
 export const ShortFacts = () => {
   return (
     <>
       <ColumnWrapper>
-        <p>Age: 30</p>
-        <p>Lives in Hofterup in Skåne</p>
+        <Ul>
+          <li>Age: 30 years</li>
+          <li>Lives in Hofterup, Skåne</li>
+        </Ul>
       </ColumnWrapper>
     </>
   );

@@ -1,3 +1,7 @@
 * {
     margin: 0;
   }
+  .content-margin {
+    margin-bottom: 70px;
+    text-align: center;
+  }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { IExperience } from "../models/IExperience";
 import { get } from "../services/serviceBase";
+import { Experience } from "./Experience";
 
 export const WorkExperience = () => {
   const [experience, setExperience] = useState<IExperience[]>([]);
@@ -20,5 +21,14 @@ export const WorkExperience = () => {
     }
   });
 
-  return <>WorkExperience</>;
+  return (
+    <>
+      <div className="content-margin">
+        <h3>Work Experience</h3>
+        {experience.map((exp) => (
+          <Experience experience={exp} key={exp.workplace}></Experience>
+        ))}
+      </div>
+    </>
+  );
 };
