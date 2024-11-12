@@ -1,6 +1,6 @@
 export interface IProject {
     projectName: string;
     projectDesc: string;
-    projectLink: string;
+    link: string;
     deployed: number;
 }

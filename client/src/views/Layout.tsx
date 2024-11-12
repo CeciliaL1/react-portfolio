@@ -53,23 +53,7 @@ export const Layout = () => {
             >
               <NavLink to={"/"}>Home</NavLink>
             </motion.li>
-            <motion.li
-              initial={{
-                opacity: 0,
-              }}
-              whileInView={{
-                opacity: 1,
 
-                transition: {
-                  duration: 1,
-                },
-              }}
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.8 }}
-              style={{ x: 100 }}
-            >
-              <NavLink to={"/CurriculumVitae"}>CV</NavLink>
-            </motion.li>
             <motion.li
               initial={{
                 opacity: 0,
@@ -87,8 +71,26 @@ export const Layout = () => {
             >
               <NavLink to={"/Portfolio"}>Portfolio</NavLink>
             </motion.li>
+            <motion.li
+              initial={{
+                opacity: 0,
+              }}
+              whileInView={{
+                opacity: 1,
+
+                transition: {
+                  duration: 1,
+                },
+              }}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.8 }}
+              style={{ x: 100 }}
+            >
+              <NavLink to={"/Contact"}>Connect</NavLink>
+            </motion.li>
           </ul>
         </NavMenu>
+
         <motion.div
           initial={{
             opacity: 0,
@@ -97,7 +99,7 @@ export const Layout = () => {
             opacity: 1,
 
             transition: {
-              duration: 1, // Animation duration
+              duration: 1,
             },
           }}
         >

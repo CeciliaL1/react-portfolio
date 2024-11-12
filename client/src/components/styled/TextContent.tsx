@@ -15,3 +15,6 @@ export const Ul = styled.ul`
 export const Ptag = styled.p`
   font-family: "Raleway", sans-serif;
 `;
+export const H3styled = styled.h3`
+  margin-bottom: 15px;
+`;

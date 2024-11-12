@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+interface IContentWrapperProps {
+  backgroundColor: string;
+  padding: number;
+}
+
 export const HeaderWrapper = styled.header`
   height: 70px;
   display: flex;
@@ -32,14 +37,14 @@ export const FooterWrapper = styled.footer`
 
 export const MainWrapper = styled.main`
   min-height: 80vh;
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
   margin-top: 100px;
   padding-left: 20px;
   padding-right: 20px;
 `;
 
-export const ContentWrapper = styled.div`
+export const ContentWrapper = styled.div<IContentWrapperProps>`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -55,7 +60,7 @@ export const RowWrapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 40px;
   padding: 10px;
 `;
 export const ColumnWrapper = styled.div`
