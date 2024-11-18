@@ -2,6 +2,9 @@ import styled, { css } from "styled-components";
 
 interface IMenyProps {
   open: boolean;
+  color: string;
+  primaryColor: string;
+  tetriarycolor: string;
 }
 export const NavMenu = styled.nav<IMenyProps>`
   margin-top: 22px;
@@ -17,7 +20,7 @@ export const NavMenu = styled.nav<IMenyProps>`
   }
   a {
     text-decoration: none;
-    color: black;
+    color: ${(props) => props.color};
     letter-spacing: 1px;
   }
   @media screen and (max-width: 801px) {
@@ -28,18 +31,19 @@ export const NavMenu = styled.nav<IMenyProps>`
 
   ${({ open }) =>
     open
-      ? css`
+      ? css<IMenyProps>`
           ul {
             display: flex;
             flex-direction: column;
             text-align: left;
-            background-color: #0d2538;
+            background-color: ${(props) => props.primaryColor};
             position: fixed;
             top: 0;
             right: 0px;
             height: 100vh;
-            width: 300px;
+            width: 100vw;
             padding: 0;
+            color: ${(props) => props.color};
           }
           li:nth-child(1) {
             margin-top: 100px;
@@ -49,7 +53,7 @@ export const NavMenu = styled.nav<IMenyProps>`
             font-size: 1.2rem;
           }
           a {
-            color: white;
+            color: ${(props) => props.color};
           }
         `
       : ""}
@@ -61,7 +65,7 @@ export const HamburgerMenu = styled.div<IMenyProps>`
     height: 2rem;
     position: fixed;
     top: 30px;
-    right: 100px;
+    right: 60px;
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
@@ -69,7 +73,17 @@ export const HamburgerMenu = styled.div<IMenyProps>`
     div {
       width: 2rem;
       height: 0.3rem;
-      background-color: ${({ open }) => (open ? "#f1f1f1" : "black")};
+
+      ${({ open }) =>
+        open
+          ? css<IMenyProps>`
+              border: 0.3px solid ${(props) => props.color}30;
+              background-color: ${(props) => props.tetriarycolor};
+            `
+          : css<IMenyProps>`
+              border: 0.3px solid ${(props) => props.color}30;
+              background-color: ${(props) => props.tetriarycolor};
+            `};
       border-radius: 10px;
     }
   }

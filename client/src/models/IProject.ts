@@ -3,4 +3,5 @@ export interface IProject {
     projectDesc: string;
     link: string;
     deployed: number;
+    tools:string;
 }

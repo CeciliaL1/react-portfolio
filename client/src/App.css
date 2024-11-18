@@ -10,3 +10,18 @@
    font-size: 3rem;
   color: black;
   }
+ .switch-theme {
+   position: relative;
+   top: 25px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: lightgray;
+  border: none;
+  cursor: pointer;
+  i {
+    font-size: 1.3rem;
+  }
+ 
+ }

@@ -10,7 +10,7 @@ export const TechnicalCompetencies = () => {
         </li>
         <li>Back End: Node.js</li>
         <li>Testning: Cypress, Jest</li>
-        <li>Agila arbetsmetoder</li>
+        <li>Agile methods</li>
         <li>UX & UI-design</li>
         <li>Wordpress</li>
         <li>PHP</li>

@@ -5,18 +5,23 @@ import {
   MainWrapper,
 } from "../components/styled/Wrappers";
 import { HamburgerMenu, NavMenu } from "../components/styled/Menu";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { motion } from "framer-motion";
+import { ThemeContext } from "styled-components";
+import { Switch } from "../components/Switch";
 
 export const Layout = () => {
   const [open, setOpen] = useState(false);
+
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   const handleClick = () => {
     setOpen(!open);
   };
   return (
     <>
-      <HeaderWrapper>
+      <HeaderWrapper secondarycolor={theme.secondaryColor} color={theme.color}>
+        <Switch switchOn={theme} click={toggleTheme}></Switch>
         <motion.h1
           initial={{
             opacity: 0,
@@ -34,7 +39,12 @@ export const Layout = () => {
         >
           Cecilia Lepik
         </motion.h1>
-        <NavMenu open={open}>
+        <NavMenu
+          open={open}
+          color={theme.color}
+          primaryColor={theme.primaryColor}
+          tetriarycolor={theme.tetriaryColor}
+        >
           <ul>
             <motion.li
               initial={{
@@ -47,11 +57,19 @@ export const Layout = () => {
                   duration: 1,
                 },
               }}
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.8 }}
+              whileHover={open ? "" : { scale: 1.2 }}
               style={{ x: 100 }}
             >
-              <NavLink to={"/"}>Home</NavLink>
+              <NavLink
+                to={"/"}
+                onClick={() => {
+                  if (open) {
+                    setOpen(!open);
+                  }
+                }}
+              >
+                Home
+              </NavLink>
             </motion.li>
 
             <motion.li
@@ -65,11 +83,19 @@ export const Layout = () => {
                   duration: 1,
                 },
               }}
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.8 }}
+              whileHover={open ? "" : { scale: 1.2 }}
               style={{ x: 100 }}
             >
-              <NavLink to={"/Portfolio"}>Portfolio</NavLink>
+              <NavLink
+                to={"/Portfolio"}
+                onClick={() => {
+                  if (open) {
+                    setOpen(!open);
+                  }
+                }}
+              >
+                Portfolio
+              </NavLink>
             </motion.li>
             <motion.li
               initial={{
@@ -82,11 +108,19 @@ export const Layout = () => {
                   duration: 1,
                 },
               }}
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.8 }}
+              whileHover={open ? "" : { scale: 1.2 }}
               style={{ x: 100 }}
             >
-              <NavLink to={"/Contact"}>Connect</NavLink>
+              <NavLink
+                to={"/Contact"}
+                onClick={() => {
+                  if (open) {
+                    setOpen(!open);
+                  }
+                }}
+              >
+                Connect
+              </NavLink>
             </motion.li>
           </ul>
         </NavMenu>
@@ -103,7 +137,13 @@ export const Layout = () => {
             },
           }}
         >
-          <HamburgerMenu open={open} onClick={handleClick}>
+          <HamburgerMenu
+            open={open}
+            onClick={handleClick}
+            color={theme.color}
+            primaryColor={theme.primaryColor}
+            tetriarycolor={theme.tetriaryColor}
+          >
             <div></div>
             <div></div>
             <div></div>
@@ -115,7 +155,7 @@ export const Layout = () => {
         <Outlet></Outlet>
       </MainWrapper>
 
-      <FooterWrapper>
+      <FooterWrapper secondarycolor={theme.secondaryColor} color={theme.color}>
         <div>
           <h3>Cecilia Lepik</h3>
           <a href="tel:0729681659">0729-681659</a>
