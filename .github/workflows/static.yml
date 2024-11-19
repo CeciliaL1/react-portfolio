@@ -37,7 +37,9 @@ jobs:
         with:
           node-version: 18
           cache: "npm"
-      
+          # Specify the directory where the lock file is located
+          cache-dependency-path: ./client/package-lock.json
+
       # Change directory to 'client' to install dependencies
       - name: Install dependencies
         run: npm install
