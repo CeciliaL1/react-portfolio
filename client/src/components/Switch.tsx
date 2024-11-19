@@ -13,7 +13,7 @@ export const Switch = ({ switchOn, click }: ISwitchProps) => {
     <button
       onClick={click}
       className="switch-theme"
-      style={{ color: theme.color, backgroundColor: theme.tetriaryColor }}
+      style={{ backgroundColor: theme.tetriaryColor }}
     >
       <i
         className={

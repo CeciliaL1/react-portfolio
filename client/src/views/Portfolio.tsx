@@ -5,13 +5,12 @@ import { RowWrapper } from "../components/styled/Wrappers";
 
 export const Portfolio = () => {
   const { projects } = useContext(PortfolioContext);
-
-  projects.reverse();
+  projects.sort((a, b) => b.id - a.id);
   return (
     <>
-      <RowWrapper>
+      <RowWrapper gap={20}>
         {projects.map((project) => (
-          <Project project={project}></Project>
+          <Project project={project} key={project.id}></Project>
         ))}
       </RowWrapper>
     </>

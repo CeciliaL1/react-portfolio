@@ -1,39 +1,51 @@
 import { motion } from "framer-motion";
 import { RowWrapper } from "../components/styled/Wrappers";
-
-import { ContactForm } from "../components/ContactForm";
-
+import { Atag, H3styled } from "../components/styled/TextContent";
+import { useContext } from "react";
+import { ThemeContext } from "styled-components";
 export const Contact = () => {
+  const { theme } = useContext(ThemeContext);
   return (
     <>
-      <RowWrapper>
-        <div className="connect-social-div">
-          <h3>Connect with me via social media</h3>
-          <RowWrapper>
-            <a href="https://github.com/CeciliaL1" target="_blank">
-              <motion.i
-                className="fa-brands fa-github"
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.8 }}
-                style={{ x: 100 }}
-              ></motion.i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/cecilia-lepik-70360b213"
-              target="_blank"
-            >
-              <motion.i
-                className="fa-brands fa-linkedin"
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.8 }}
-                style={{ x: 100 }}
-              ></motion.i>
-            </a>
-          </RowWrapper>
-        </div>
-
+      <RowWrapper gap={10} margin={150}>
         <div>
-          <ContactForm></ContactForm>
+          <H3styled color={theme.color}>Send me an mail</H3styled>
+          <Atag
+            href="mailto:cecilialepik@gmail.com"
+            linkcolor={theme.linkColor}
+          >
+            cecilialepik@gmail.com
+          </Atag>
+        </div>
+        <div className="connect-social-div">
+          <H3styled color={theme.color}>
+            Or connect with me via socials
+          </H3styled>
+
+          <Atag
+            linkcolor={theme.linkColor}
+            href="https://github.com/CeciliaL1"
+            target="_blank"
+          >
+            <motion.i
+              className="fa-brands fa-github"
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.8 }}
+              style={{ x: 100 }}
+            ></motion.i>
+          </Atag>
+          <Atag
+            linkcolor={theme.linkColor}
+            href="https://www.linkedin.com/in/cecilia-lepik-70360b213"
+            target="_blank"
+          >
+            <motion.i
+              className="fa-brands fa-linkedin"
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.8 }}
+              style={{ x: 100 }}
+            ></motion.i>
+          </Atag>
         </div>
       </RowWrapper>
     </>

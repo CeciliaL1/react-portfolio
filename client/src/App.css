@@ -6,9 +6,9 @@
     text-align: center;
   }
   .connect-social-div a {
-  
+  margin-left: 20px;
    font-size: 3rem;
-  color: black;
+
   }
  .switch-theme {
    position: relative;
@@ -20,8 +20,16 @@
   background-color: lightgray;
   border: none;
   cursor: pointer;
-  i {
-    font-size: 1.3rem;
-  }
  
+ 
+ }
+ .switch-theme i {
+   
+    color: black;
+    font-size: 1.3rem;
+
+ }
+ .project-section-deploy {
+ margin-top: 20px;
+ margin-bottom: 20px;
  }

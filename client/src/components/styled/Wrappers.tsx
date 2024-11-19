@@ -9,6 +9,8 @@ interface IWrapperProps {
   padding?: number;
   margin?: number;
   width?: number;
+  height?: number;
+  gap?: number;
 }
 
 export const HeaderWrapper = styled.header<IWrapperProps>`
@@ -64,20 +66,24 @@ export const ContentWrapper = styled.div<IWrapperProps>`
   justify-content: space-around;
   text-align: center;
   background-color: ${(props) => props.primarycolor};
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
   border-radius: 30px;
   width: ${(props) => props.width}px;
+  height: ${(props) => props.height}px;
   padding: ${(props) => props.padding}px;
   margin-bottom: ${(props) => (props.margin ? props.margin : 20)}px;
   color: ${(props) => props.color};
 `;
 
-export const RowWrapper = styled.div`
+export const RowWrapper = styled.div<IWrapperProps>`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: space-around;
+  gap: ${(props) => props.gap}px;
   padding: 10px;
+  padding-bottom: 50px;
+  margin-left: ${(props) => props.margin}px;
 `;
 export const ColumnWrapper = styled.div`
   display: flex;

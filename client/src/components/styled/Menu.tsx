@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 interface IMenyProps {
   open: boolean;
   color: string;
-  primaryColor: string;
+  primarycolor: string;
   tetriarycolor: string;
 }
 export const NavMenu = styled.nav<IMenyProps>`
@@ -36,7 +36,7 @@ export const NavMenu = styled.nav<IMenyProps>`
             display: flex;
             flex-direction: column;
             text-align: left;
-            background-color: ${(props) => props.primaryColor};
+            background-color: ${(props) => props.primarycolor};
             position: fixed;
             top: 0;
             right: 0px;

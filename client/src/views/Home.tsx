@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ThemeContext } from "styled-components";
 import { LongFacts } from "../components/LongFacts";
-import { ShortFacts } from "../components/ShortFacts";
+
 import {
   ColumnWrapper,
   ContentWrapper,
@@ -16,7 +16,7 @@ export const Home = () => {
       <RowWrapper>
         <ContentWrapper
           primarycolor={theme.primaryColor}
-          padding={40}
+          padding={20}
           color={theme.color}
           width={500}
         >
@@ -30,7 +30,6 @@ export const Home = () => {
             />
           </div>
           <div>
-            <ShortFacts></ShortFacts>
             <LongFacts></LongFacts>
           </div>
         </ContentWrapper>
@@ -41,6 +40,7 @@ export const Home = () => {
           margin={100}
           color={theme.color}
           width={500}
+          height={300}
         >
           <ColumnWrapper>
             <TechnicalCompetencies></TechnicalCompetencies>
