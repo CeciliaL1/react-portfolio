@@ -20,7 +20,6 @@ export const Layout = () => {
     return;
   }
 
-  console.log(theme);
   const handleClick = () => {
     setOpen(!open);
   };
