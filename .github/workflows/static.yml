@@ -31,22 +31,35 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: "npm"
+          # Specify the directory where the lock file is located
+          cache-dependency-path: ./client/package-lock.json
+
+      # Change directory to 'client' to install dependencies
       - name: Install dependencies
         run: npm install
+        working-directory: ./client
+
+      # Change directory to 'client' to build the project
       - name: Build
         run: npm run build
+        working-directory: ./client
+
       - name: Setup Pages
         uses: actions/configure-pages@v3
+      
+      # Change the path to upload the correct build output
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload entire repository
-          path: "./dist"
+          # Assuming the build output is inside 'client/dist'
+          path: "./client/dist"
+      
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
