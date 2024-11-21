@@ -8,6 +8,7 @@ import { useEffect, useReducer, useState } from "react";
 import { themes } from "./models/Theme";
 import { ActionType, ThemeReducer } from "./reducers/ThemeReducer";
 import { ThemeContext } from "styled-components";
+import { ThemeDispatch } from "./contexts/ThemeDispatch";
 
 function App() {
   const projects = [
@@ -102,7 +103,7 @@ function App() {
     window.matchMedia("(prefers-color-scheme: light").matches
   );
   const [theme, dispatch] = useReducer(ThemeReducer, themes.light);
-
+  console.log(theme);
   /*
   const [projects, setProjects] = useState<IProject[]>([]);
   const [isFetched, setIsFetched] = useState(false);
@@ -130,6 +131,9 @@ function App() {
 
   const toggleTheme = () => {
     setIsDarkTheme(!isDarkTheme);
+    if (!dispatch) {
+      return;
+    }
 
     return theme.name === themes.light.name
       ? dispatch({ type: ActionType.TOGGLED, payload: themes.dark })
@@ -138,11 +142,13 @@ function App() {
 
   return (
     <>
-      <ThemeContext.Provider value={{ theme, toggleTheme }}>
-        <PortfolioContext.Provider value={{ projects: projects }}>
-          <RouterProvider router={router}></RouterProvider>
-        </PortfolioContext.Provider>
-      </ThemeContext.Provider>
+      <ThemeDispatch.Provider value={dispatch}>
+        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+          <PortfolioContext.Provider value={{ projects: projects }}>
+            <RouterProvider router={router}></RouterProvider>
+          </PortfolioContext.Provider>
+        </ThemeContext.Provider>
+      </ThemeDispatch.Provider>
     </>
   );
 }

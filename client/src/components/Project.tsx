@@ -1,15 +1,14 @@
-import { useContext } from "react";
-import { ThemeContext } from "styled-components";
 import { IProject } from "../models/IProject";
 import { ContentWrapper, ColumnWrapper } from "./styled/Wrappers";
 import { Atag, H3styled, Ptag } from "./styled/TextContent";
+import { useTheme } from "../contexts/ThemeContext";
 
 interface IProjectProps {
   project: IProject;
 }
 
 export const Project = ({ project }: IProjectProps) => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
   return (
     <>
       <ContentWrapper

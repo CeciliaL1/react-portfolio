@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { ThemeContext } from "styled-components";
 import { LongFacts } from "../components/LongFacts";
 
 import {
@@ -8,9 +6,10 @@ import {
   RowWrapper,
 } from "../components/styled/Wrappers";
 import { TechnicalCompetencies } from "../components/TechnicalCompetencies";
+import { useTheme } from "../contexts/ThemeContext";
 
 export const Home = () => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
   return (
     <>
       <RowWrapper>

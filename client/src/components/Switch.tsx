@@ -1,6 +1,6 @@
-import { ThemeContext } from "styled-components";
 import { ITheme, themes } from "../models/Theme";
-import { useContext } from "react";
+
+import { useTheme } from "../contexts/ThemeContext";
 
 interface ISwitchProps {
   switchOn: ITheme;
@@ -8,7 +8,10 @@ interface ISwitchProps {
 }
 
 export const Switch = ({ switchOn, click }: ISwitchProps) => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
+  if (!theme) {
+    return;
+  }
   return (
     <button
       onClick={click}

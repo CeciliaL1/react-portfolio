@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { RowWrapper } from "../components/styled/Wrappers";
 import { Atag, H3styled } from "../components/styled/TextContent";
-import { useContext } from "react";
-import { ThemeContext } from "styled-components";
+
+import { useTheme } from "../contexts/ThemeContext";
 export const Contact = () => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
   return (
     <>
       <RowWrapper gap={10} margin={150}>
