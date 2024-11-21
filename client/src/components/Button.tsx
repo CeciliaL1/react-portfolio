@@ -1,5 +1,7 @@
+import { useContext } from "react";
+
 import { PrimaryButton } from "./styled/Buttons";
-import { useTheme } from "../contexts/ThemeContext";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 interface IButtonProps {
   children: JSX.Element;
@@ -7,7 +9,7 @@ interface IButtonProps {
 }
 
 export const Button = ({ children, click }: IButtonProps) => {
-  const { theme } = useTheme();
+  const { theme } = useContext(ThemeContext);
 
   return (
     <>

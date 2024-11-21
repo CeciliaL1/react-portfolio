@@ -1,6 +1,6 @@
+import { ThemeContext } from "../contexts/ThemeContext";
 import { ITheme, themes } from "../models/Theme";
-
-import { useTheme } from "../contexts/ThemeContext";
+import { useContext } from "react";
 
 interface ISwitchProps {
   switchOn: ITheme;
@@ -8,7 +8,7 @@ interface ISwitchProps {
 }
 
 export const Switch = ({ switchOn, click }: ISwitchProps) => {
-  const { theme } = useTheme();
+  const theme = useContext(ThemeContext);
   if (!theme) {
     return;
   }
@@ -16,7 +16,7 @@ export const Switch = ({ switchOn, click }: ISwitchProps) => {
     <button
       onClick={click}
       className="switch-theme"
-      style={{ backgroundColor: theme.tetriaryColor }}
+      style={{ backgroundColor: theme.theme.primaryColor }}
     >
       <i
         className={

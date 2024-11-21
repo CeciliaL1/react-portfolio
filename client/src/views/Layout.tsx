@@ -5,15 +5,20 @@ import {
   MainWrapper,
 } from "../components/styled/Wrappers";
 import { HamburgerMenu, NavMenu } from "../components/styled/Menu";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { motion } from "framer-motion";
-import { useTheme } from "styled-components";
+
 import { Switch } from "../components/Switch";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 export const Layout = () => {
   const [open, setOpen] = useState(false);
 
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
+  if (!theme || !toggleTheme) {
+    return;
+  }
 
   console.log(theme);
   const handleClick = () => {

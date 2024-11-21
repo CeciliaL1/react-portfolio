@@ -8,7 +8,6 @@ import { useEffect, useReducer, useState } from "react";
 import { themes } from "./models/Theme";
 import { ActionType, ThemeReducer } from "./reducers/ThemeReducer";
 import { ThemeContext } from "styled-components";
-import { ThemeDispatch } from "./contexts/ThemeDispatch";
 
 function App() {
   const projects = [
@@ -142,13 +141,11 @@ function App() {
 
   return (
     <>
-      <ThemeDispatch.Provider value={dispatch}>
-        <ThemeContext.Provider value={{ theme, toggleTheme }}>
-          <PortfolioContext.Provider value={{ projects: projects }}>
-            <RouterProvider router={router}></RouterProvider>
-          </PortfolioContext.Provider>
-        </ThemeContext.Provider>
-      </ThemeDispatch.Provider>
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <PortfolioContext.Provider value={{ projects: projects }}>
+          <RouterProvider router={router}></RouterProvider>
+        </PortfolioContext.Provider>
+      </ThemeContext.Provider>
     </>
   );
 }
