@@ -1,4 +1,4 @@
-import { Ul } from "./styled/TextContent";
+import { Ul } from "./styled/TextContent.tsx";
 
 export const TechnicalCompetencies = () => {
   return (

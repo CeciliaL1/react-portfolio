@@ -3,13 +3,13 @@ import {
   FooterWrapper,
   HeaderWrapper,
   MainWrapper,
-} from "../components/styled/Wrappers";
-import { HamburgerMenu, NavMenu } from "../components/styled/Menu";
+} from "../components/styled/Wrappers.tsx";
+import { HamburgerMenu, NavMenu } from "../components/styled/Menu.tsx";
 import { useContext, useState } from "react";
 import { motion } from "framer-motion";
 
-import { Switch } from "../components/Switch";
-import { ThemeContext } from "../contexts/ThemeContext";
+import { Switch } from "../components/Switch.tsx";
+import { ThemeContext } from "../contexts/ThemeContext.ts";
 
 export const Layout = () => {
   const [open, setOpen] = useState(false);

@@ -1,6 +1,6 @@
 import { Ul } from "./styled/TextContent";
-import { ContentWrapper, ColumnWrapper } from "./styled/Wrappers";
-import { TechnicalCompetencies } from "./TechnicalCompetencies";
+import { ContentWrapper, ColumnWrapper } from "./styled/Wrappers.tsx";
+import { TechnicalCompetencies } from "./TechnicalCompetencies.tsx";
 
 export const Other = () => {
   return (

@@ -1,14 +1,14 @@
 import { useContext } from "react";
 
-import { LongFacts } from "../components/LongFacts";
+import { LongFacts } from "../components/LongFacts.tsx";
 
 import {
   ColumnWrapper,
   ContentWrapper,
   RowWrapper,
-} from "../components/styled/Wrappers";
-import { TechnicalCompetencies } from "../components/TechnicalCompetencies";
-import { ThemeContext } from "../contexts/ThemeContext";
+} from "../components/styled/Wrappers.tsx";
+import { TechnicalCompetencies } from "../components/TechnicalCompetencies.tsx";
+import { ThemeContext } from "../contexts/ThemeContext.ts";
 
 export const Home = () => {
   const { theme } = useContext(ThemeContext);
@@ -23,7 +23,7 @@ export const Home = () => {
         >
           <div>
             <img
-              src="public/cecilia.jpg"
+              src="./public/cecilia.jpg"
               alt="Kvinna med blommig klänning"
               loading="lazy"
               width={150}

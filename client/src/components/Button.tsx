@@ -1,7 +1,7 @@
 import { useContext } from "react";
 
-import { PrimaryButton } from "./styled/Buttons";
-import { ThemeContext } from "../contexts/ThemeContext";
+import { PrimaryButton } from "./styled/Buttons.tsx";
+import { ThemeContext } from "../contexts/ThemeContext.tsx";
 
 interface IButtonProps {
   children: JSX.Element;

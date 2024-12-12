@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { MainWrapper } from "../components/styled/Wrappers";
-import { Ptag } from "../components/styled/TextContent";
+import { MainWrapper } from "../components/styled/Wrappers.tsx";
+import { Ptag } from "../components/styled/TextContent.tsx";
 import { useContext } from "react";
 
-import { ThemeContext } from "../contexts/ThemeContext";
+import { ThemeContext } from "../contexts/ThemeContext.ts";
 
 export const NotFound = () => {
   const { theme } = useContext(ThemeContext);

@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { RowWrapper } from "../components/styled/Wrappers";
-import { Atag, H3styled } from "../components/styled/TextContent";
+import { RowWrapper } from "../components/styled/Wrappers.tsx";
+import { Atag, H3styled } from "../components/styled/TextContent.tsx";
 import { useContext } from "react";
-import { ThemeContext } from "../contexts/ThemeContext";
+import { ThemeContext } from "../contexts/ThemeContext.ts";
 
 export const Contact = () => {
   const { theme } = useContext(ThemeContext);

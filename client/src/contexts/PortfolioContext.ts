@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { IProject } from "../models/IProject";
+import { IProject } from "../models/IProject.ts";
 
 
 interface IProjectContext {

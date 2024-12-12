@@ -1,5 +1,5 @@
-import { ThemeContext } from "../contexts/ThemeContext";
-import { ITheme, themes } from "../models/Theme";
+import { ThemeContext } from "../contexts/ThemeContext.ts";
+import { ITheme, themes } from "../models/Theme.ts";
 import { useContext } from "react";
 
 interface ISwitchProps {

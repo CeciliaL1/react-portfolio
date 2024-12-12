@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { PortfolioContext } from "../contexts/PortfolioContext";
-import { Project } from "../components/Project";
-import { RowWrapper } from "../components/styled/Wrappers";
+import { PortfolioContext } from "../contexts/PortfolioContext.ts";
+import { Project } from "../components/Project.tsx";
+import { RowWrapper } from "../components/styled/Wrappers.tsx";
 
 export const Portfolio = () => {
   const { projects } = useContext(PortfolioContext);

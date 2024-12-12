@@ -1,9 +1,9 @@
 import { useContext } from "react";
 
-import { IProject } from "../models/IProject";
-import { ContentWrapper, ColumnWrapper } from "./styled/Wrappers";
-import { Atag, H3styled, Ptag } from "./styled/TextContent";
-import { ThemeContext } from "../contexts/ThemeContext";
+import { IProject } from "../models/IProject.ts";
+import { ContentWrapper, ColumnWrapper } from "./styled/Wrappers.tsx";
+import { Atag, H3styled, Ptag } from "./styled/TextContent.tsx";
+import { ThemeContext } from "../contexts/ThemeContext.ts";
 
 interface IProjectProps {
   project: IProject;

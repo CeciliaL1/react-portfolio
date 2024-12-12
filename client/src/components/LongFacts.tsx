@@ -1,4 +1,4 @@
-import { TextContent } from "./styled/TextContent";
+import { TextContent } from "./styled/TextContent.tsx";
 
 export const LongFacts = () => {
   return (

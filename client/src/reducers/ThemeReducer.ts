@@ -1,4 +1,4 @@
-import { ITheme } from "../models/Theme";
+import { ITheme } from "../models/Theme.ts";
 
 
 export enum ActionType {

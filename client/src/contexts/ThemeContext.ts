@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { ITheme, themes } from "../models/Theme";
+import { ITheme, themes } from "../models/Theme.ts";
 
 
 interface IThemeContext {
